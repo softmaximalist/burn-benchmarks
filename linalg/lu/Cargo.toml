@@ -1,0 +1,15 @@
+[package]
+name = "lu-benchmark"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+burn = { git = "https://github.com/softmaximalist/burn", branch = "lu_decomp", features = ["ndarray", "wgpu"] }
+
+[dev-dependencies]
+divan = "0.1"
+
+[[bench]]
+name = "lu_bench"
+harness = false
