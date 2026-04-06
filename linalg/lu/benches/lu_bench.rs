@@ -13,7 +13,7 @@ const BATCHED_SIZES: &[usize] = &[10, 100, 500, 1000];
 const BATCH_SIZE: usize = 8;
 
 #[divan::bench(
-    types = [NdArray, Wgpu],
+    types = [NdArray],
     args = SIZES
 )]
 fn old_lu_2d<B: Backend>(bencher: Bencher, size: &usize) {
@@ -45,7 +45,7 @@ fn new_lu_2d<B: Backend>(bencher: Bencher, size: &usize) {
 }
 
 #[divan::bench(
-    types = [NdArray, Wgpu],
+    types = [NdArray],
     args = BATCHED_SIZES
 )]
 fn old_lu_3d<B: Backend>(bencher: Bencher, size: &usize) {
